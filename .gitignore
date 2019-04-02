@@ -1,0 +1,68 @@
+# Compiled source #
+###################
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+*.log.xml
+/*.sql
+
+# OS generated files #
+######################
+*.swp
+*.un
+*.un~
+.DS_Store
+ehthumbs.db
+Thumbs.db
+_notes
+
+# IDE generated files #
+#######################
+.settings
+.project
+.buildpath
+.idea
+.vscode
+/venv
+
+# Virtual machine related files #
+#######################
+.vagrant
+.vagrantuser
+
+# External libraries #
+######################
+/vendor
+deployer.phar
+
+# Subprojects #
+######################
+/subprojects/*
+!/subprojects/.keep
+
+# SSH keys #
+######################
+/vagrant/dotfiles/.ssh/*
+!/vagrant/dotfiles/.ssh/.keep
+
+
