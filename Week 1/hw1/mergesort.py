@@ -55,11 +55,12 @@ with open(filename, "r") as file:
         unsorted = map(int, newline.split(' '))
         # Pass unsorted array to merge sort function (ignoring the first index because we don't need it)
         sorted = mergesort(unsorted[1:])
-
+        # Convert the result of sorted into a string
         string = ' '.join(str(e) for e in sorted)
-        # Write each line to a text file
+        # Write each line to a text file called 'merge.txt'
         with open('merge.txt', 'a') as mergeFile:
             mergeFile.write(string + '\n')
+    # Generate a time stamp to the end of the 'merge.txt' file
     with open('merge.txt', 'a') as mergeFile:
         date = datetime.datetime.now()
         mergeFile.write("Executed on: " + str(date) + '\n\n')
