@@ -1,3 +1,5 @@
+import datetime
+
 filename = "data.txt"
 
 """
@@ -58,3 +60,6 @@ with open(filename, "r") as file:
         # Write each line to a text file
         with open('merge.txt', 'a') as mergeFile:
             mergeFile.write(string + '\n')
+    with open('merge.txt', 'a') as mergeFile:
+        date = datetime.datetime.now()
+        mergeFile.write("Executed on: " + str(date) + '\n\n')
