@@ -23,7 +23,6 @@ def mergesort(array):
 
     return merge(left, right)
 
-
 """
     Return a result consisting of two merged left and right arrays
 
@@ -47,7 +46,7 @@ def merge(left, right):
     return result
 
 # Primary File Handling
-with open(filename, "r") as file:
+with open(filename, "rb") as file:
     for line in file:
         # Strip out the newline character from each line
         newline = line.rstrip('\n')
@@ -59,8 +58,10 @@ with open(filename, "r") as file:
         string = ' '.join(str(e) for e in sorted)
         # Write each line to a text file called 'merge.txt'
         with open('merge.txt', 'a') as mergeFile:
-            mergeFile.write(string + '\n')
+            mergeFile.write(string)
+            mergeFile.write('\n')
     # Generate a time stamp to the end of the 'merge.txt' file
     with open('merge.txt', 'a') as mergeFile:
         date = datetime.datetime.now()
-        mergeFile.write("Executed on: " + str(date) + '\n\n')
+        mergeFile.write("Executed on: " + str(date))
+        mergeFile.write('\n\n')

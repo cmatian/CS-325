@@ -1,4 +1,5 @@
 import datetime
+
 filename = "data.txt"
 
 """
@@ -37,8 +38,10 @@ with open(filename, "r") as file:
         string = ' '.join(str(e) for e in sorted)
         # Write each line to a text file called 'merge.txt'
         with open('insert.txt', 'a') as insertFile:
-            insertFile.write(string + '\n')
+            insertFile.write(string)
+            insertFile.write('\n')
     # Generate a time stamp to the end of the 'merge.txt' file
     with open('insert.txt', 'a') as insertFile:
         date = datetime.datetime.now()
-        insertFile.write("Executed on: " + str(date) + '\n\n')
+        insertFile.write("Executed on: " + str(date))
+        insertFile.write('\n\n')
