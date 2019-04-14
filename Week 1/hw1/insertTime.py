@@ -25,7 +25,7 @@ def insertsort(array):
     return array
 
 # Ranges to be used in the random array
-n = [5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000]
+n = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
 
 # Run Merge Sort and collect the running time on the program
 idx = 0
