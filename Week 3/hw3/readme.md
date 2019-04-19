@@ -9,7 +9,7 @@
 2) An results will be written to an output file called `results.txt` in the same directory.
 
 3) Do note that if you try to view the output text files using a Windows machine (outside of the school server), the line breaks will not exist and you will
-need to view it using a text editor like notepad++ (or any IDE that automatically converts linebreaks using your OS's style). Using `vim merge.txt` on the FLIP server will load it with the proper line breaks. I recommend this method.
+need to view it using a text editor like notepad++ (or any IDE that automatically converts linebreaks using your OS's style). Using `vim results.txt` on the FLIP server will load it with the proper line breaks. I recommend this method.
 
 4) Each time you run the program, the most recent result will be appended to the text file (if it exists). Otherwise, it will generate a new
 text file. The execution time will be noted at the bottom of the result so you know which one was most recent. Either way, the result at the bottom is the most recent result.
