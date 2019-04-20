@@ -1,0 +1,24 @@
+Format
+	- The Midterm consists of T/F, multiple choice, short answer and written questions.  
+	- Approximately 20% of the points are Multiple Choice or T/F.  
+	- You have 110 minutes and most students will use from 90-110 minutes.  
+	- You can bring a calculator, notesheet 8.5" x 11" double-sided and pencil. (Scratch paper/whiteboard optional depending on proctor)	
+Topics	
+	The list of topics that may be covered on the exam from Chapters 1, 2, 3, 4, 15, 16 (CLRS)  are:
+		- From Chapter 2: Insertion Sort, Merge Sort, Binary Search.
+			- Bounding and comparing complexities 
+			- Big O, Big Omega, Big Theta
+			- Write an algorithm using divide and conquer techniques.
+			- Given an algorithm write a recurrence relation.
+			- Solve a recurrence with your choice of technique 
+		Dynamic Programming - Given a problem explain how DP can be used t solve it. Be familiar with the following DP Algorithms.  
+			- LCS, LIS
+			- Knapsack
+			- Coin Change
+			- Rod cutting
+			- Fibonacci
+		Greedy Algorithms
+			- Knapsack
+			- Coin Change
+			- Huffman codes
+			- Scheduling
