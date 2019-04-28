@@ -22,31 +22,31 @@ def activitySelection(v):
     return list(reversed(storage))
 
 with open('act.txt') as inFile:
-    st = []
-    sn = 1
+    storage = []
+    set = 1
     for line in inFile:
         # Clear trailing white spaces and \n characters
-        l = line.rstrip()
-        # Check if we've reached a line where there's no leading white space and the length of the st array is greater than 0
+        line = line.rstrip()
+        # Check if we've reached a line where there's no leading white space and the length of the storage array is greater than 0
         # This tells us that we've reached a new Set of data and should evaluate the current data set we collected.
-        # The else condition will handle storage of the data into a list that's stored into the st array.
-        if ' ' not in l and len(st) > 0:
-            print("Set: " + str(sn))
+        # The else condition will handle storage of the data into a list that's stored into the storage array.
+        if ' ' not in line and len(storage) > 0:
+            print("Set: " + str(set))
             # We need to test the first result of the array for data pollution.
             # The first loop will always append the # of activities, so we need to pass in an array that skips over the bad data
-            if(len(st[0]) > 1):
-                sol = activitySelection(st[0:])
+            if(len(storage[0]) > 1):
+                result = activitySelection(storage[0:])
             else:
-                sol = activitySelection(st[1:])
-            print("Number of activities selected = " + str(len(sol)))
-            print("Activities: " + str(sol) + '\n')
-            sn += 1
-            st = []
+                result = activitySelection(storage[1:])
+            print("Number of activities selected = " + str(len(result)))
+            print("Activities: " + str(result) + '\n')
+            set += 1
+            storage = []
         else:
-            st.append([int(i) for i in l.split()])
-    # A final pass that evaluates the rest of the data from the st array.
-    if len(st) > 0:
-        print("Set: " + str(sn))
-        sol = activitySelection(st)
-        print("Number of activities selected = " + str(len(sol)))
-        print("Activities: " + str(sol))
+            storage.append([int(i) for i in line.split()])
+    # A final pass that evaluates the rest of the data from the storage array.
+    if len(storage) > 0:
+        print("Set: " + str(set))
+        result = activitySelection(storage)
+        print("Number of activities selected = " + str(len(result)))
+        print("Activities: " + str(result))
