@@ -1,20 +1,20 @@
-def activitySelection(v):
+def activitySelection(array):
     # Sort the list by the finishing time
-    v.sort(key = lambda x: x[2])
+    array.sort(key = lambda x: x[2])
     # Capture length of list
-    n = len(v)
+    n = len(array)
     # Storage array for selected activities
     storage = []
     print("The following activities are selected")
     # Start with the last activity
     i = n - 1
-    # Append the last activity by default since that's what we start with in a last-to-start algorithm
-    storage.append(v[i][0])
+    # Append the last activity by default since that's what we start with in array last-to-start algorithm
+    storage.append(array[i][0])
     # Loop through the list in reverse order
-    for idx, j in reversed(list(enumerate(v))):
+    for idx, j in reversed(list(enumerate(array))):
         # Compare current activity's finish time to previous activity's start time.
         # If it's less than the start time than we push the activity number (j[0]) to the storage array.
-        if j[2] <= v[i][1]:
+        if j[2] <= array[i][1]:
             storage.append(j[0])
             # Set i to the enumerator (idx)
             i = idx
@@ -27,9 +27,9 @@ with open('act.txt') as inFile:
     for line in inFile:
         # Clear trailing white spaces and \n characters
         line = line.rstrip()
-        # Check if we've reached a line where there's no leading white space and the length of the storage array is greater than 0
-        # This tells us that we've reached a new Set of data and should evaluate the current data set we collected.
-        # The else condition will handle storage of the data into a list that's stored into the storage array.
+        # Check if we've reached array line where there's no leading white space and the length of the storage array is greater than 0
+        # This tells us that we've reached array new Set of data and should evaluate the current data set we collected.
+        # The else condition will handle storage of the data into array list that's stored into the storage array.
         if ' ' not in line and len(storage) > 0:
             print("Set: " + str(set))
             # We need to test the first result of the array for data pollution.
