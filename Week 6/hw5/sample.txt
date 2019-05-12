@@ -1,0 +1,13 @@
+6
+Bear
+Maxxx
+Killer
+Knight
+Duke
+Samson
+5
+Bear Samson
+Killer Bear
+Samson Duke
+Killer Duke
+Maxxx Knight
