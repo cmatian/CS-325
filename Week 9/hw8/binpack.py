@@ -41,22 +41,23 @@ def bestFit(a, b, c):
     # Loop through each item
     for i in range(items):
         idx = 0
-        min = capacity + 1
+        min = capacity
         index_of_best_bin = 0
         # Find the tightest possible bin to place the item into
         while(idx < result):
             if(bins[idx] >= weights[i] and bins[idx] - weights[i] < min):
                 index_of_best_bin = idx
-                bins[idx] = bins[idx] - weights[i]
+                min = bins[idx] - weights[i]
             idx += 1
         # If we didn't find a bin, find a new tighter bin to place it into
-        if(min == capacity + 1):
+        if(min == capacity):
             bins[result] = capacity - weights[i]
             result += 1
         else:
             bins[index_of_best_bin] -= weights[i]
 
     return result
+
 
 # Driver
 with open('bin.txt', 'r') as inFile:
@@ -79,5 +80,5 @@ with open('bin.txt', 'r') as inFile:
         decreasing_first_fit = firstFitDecreasing(capacity, item_total, item_weights)
         best_fit = bestFit(capacity, item_total, item_weights)
 
-        print("Test case %d: First Fit: %d, First Fit Decreasing: %d, Best Fit: %d" % (x + 1, first_fit, decreasing_first_fit, best_fit))
+        print("Test case %d:\n\t\tFirst Fit: %d\n\t\tFirst Fit Decreasing: %d\n\t\tBest Fit: %d" % (x + 1, first_fit, decreasing_first_fit, best_fit))
 
