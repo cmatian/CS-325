@@ -1,6 +1,6 @@
+import timeit
 
-###### Fitting Algorithms #######
-
+###### Fitting Algorithms ######
 # First Fit
 # a = capacity, b = total number of items, c = weights of items
 def firstFit(a, b, c):
@@ -80,5 +80,26 @@ with open('bin.txt', 'r') as inFile:
         decreasing_first_fit = firstFitDecreasing(capacity, item_total, item_weights)
         best_fit = bestFit(capacity, item_total, item_weights)
 
-        print("Test case %d:\n\t\tFirst Fit: %d\n\t\tFirst Fit Decreasing: %d\n\t\tBest Fit: %d" % (x + 1, first_fit, decreasing_first_fit, best_fit))
+        # Capture time for each function
+        ff_start = timeit.default_timer()
+        firstFit(capacity, item_total, item_weights)
+        ff_end = timeit.default_timer()
+        ff_time = (ff_end - ff_start)
 
+        ffd_start = timeit.default_timer()
+        firstFitDecreasing(capacity, item_total, item_weights)
+        ffd_end = timeit.default_timer()
+        ffd_time = (ffd_end - ffd_start)
+
+        bf_start = timeit.default_timer()
+        bestFit(capacity, item_total, item_weights)
+        bf_end = timeit.default_timer()
+        bf_time = (bf_end - bf_start)
+
+        print("--- Test case %d ---" % (x + 1))
+        print("\tFirst-Fit:")
+        print("\t\tBins: %d, Time: %0.10f\n" % (first_fit, ff_time))
+        print("\tFirst-Fit-Decreasing:")
+        print("\t\tBins: %d, Time: %0.10f\n" % (decreasing_first_fit, ffd_time))
+        print("\tBest-Fit:")
+        print("\t\tBins: %d, Time: %0.10f\n" % (best_fit, bf_time))
